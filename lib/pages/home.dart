@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:onenavigation/impl/config.dart';
 import 'package:onenavigation/impl/system.dart';
 import 'package:onenavigation/main.dart';
+import 'package:onenavigation/pages/widgets/navigation.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -71,11 +72,13 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(
                   width: window.width,
                   height: window.height,
-                  child: const Center(
-                      child: Padding(
-                    padding: EdgeInsets.all(20),
-                    child: Text("One Navigation"),
-                  )),
+                  child: const Padding(
+                      padding: EdgeInsets.all(128),
+                      child: Center(
+                          child: Card(
+                              child: Padding(
+                                  padding: EdgeInsets.all(12),
+                                  child: NavigationPane())))),
                 ),
                 SizedBox(
                   width: window.width,
