@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:onenavigation/impl/yaml.dart';
-import 'package:onenavigation/pages/home.dart';
 import 'package:arche/arche.dart';
+import 'package:onenavigation/impl/config.dart';
+import 'package:onenavigation/pages/home.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  ArcheBus.bus.provide(ArcheConfig.memory(
+  var config = ArcheConfig.memory(
       init: await rootBundle.loadString("resource/config.yaml"),
-      serializer: YamlSerializer()));
+      serializer: YamlSerializer());
+  ArcheBus.bus.provide(config).provide(ConfigContainer.fromArche(config));
   runApp(const MyApp());
 }
 
@@ -18,16 +19,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    var config = ArcheBus.config;
+    ConfigContainer config = ArcheBus.bus.of();
     return MaterialApp(
-      title: config.getOr(
-        "title",
-        "One Navigation",
-      ),
+      title: config.site,
       themeMode: ThemeMode.system,
-      darkTheme: ThemeData.dark(useMaterial3: true).copyWith(),
+      darkTheme: ThemeData.dark(useMaterial3: true),
       theme: ThemeData.light(useMaterial3: true),
-      home: const HomePage(),
+      home: const InitPage(),
     );
   }
 }
