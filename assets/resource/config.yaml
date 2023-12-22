@@ -1,5 +1,14 @@
-# 网站/卡片的标题，默认为One Navigation
-title: One Navigation
+# 网站的标题，显示在标签栏
+site: One Navigation
+
+# 主页标题
+home:
+  title: OneNavigation
+  colors:
+    # 0xFF+R+G+B
+    - 0xFFE91E63
+    - 0xFF673AB7
+    
 # 页脚
 footer: Copyright © 2023 One Navigation
 # Copyright © 2023 XXXXX
