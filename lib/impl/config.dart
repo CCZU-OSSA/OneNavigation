@@ -1,6 +1,7 @@
 import 'package:arche/abc/typed.dart';
 import 'package:arche/arche.dart';
 import 'package:flutter/material.dart';
+import 'package:onenavigation/impl/text.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import 'package:yaml/yaml.dart';
 
@@ -22,7 +23,7 @@ class ConfigContainer {
   late List<InternalLink> links;
   late String site;
   late String footer;
-
+  
   static ConfigContainer fromArche(ArcheConfig config) {
     var container = ConfigContainer();
     container.home = InternalHome.fromMap(config.get("home"));
@@ -38,13 +39,12 @@ class ConfigContainer {
 }
 
 class InternalHome {
-  String title;
-  List<Color> colors;
-  InternalHome(this.title, this.colors);
-  static fromMap<K, V>(Map<K, V> map) {
-    List rawcolors = (map["colors"] as YamlList).toList();
-    return InternalHome(map["title"].toString(),
-        List.generate(rawcolors.length, (index) => Color(rawcolors[index])));
+  ShaderString title;
+  ShaderString subtitle;
+  InternalHome(this.title, this.subtitle);
+  static fromMap(Map map) {
+    return InternalHome(ShaderString.fromMap(map["title"]),
+        ShaderString.fromMap(map["subtitle"]));
   }
 }
 

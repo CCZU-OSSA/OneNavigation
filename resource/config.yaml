@@ -3,12 +3,20 @@ site: One Navigation
 
 # 主页标题
 home:
-  title: OneNavigation
-  colors:
-    # 0xFF+R+G+B
-    - 0xFFE91E63
-    - 0xFF673AB7
-    
+  logo:
+    enable:
+    type:
+    text:
+  title:
+    text: OneNavigation
+    colors:
+      # 0xFF+R+G+B
+      - 0xFFE91E63
+      - 0xFF673AB7
+  subtitle:
+    text: Just One Navigation
+    colors:
+
 # 页脚
 footer: Copyright © 2023 One Navigation
 # Copyright © 2023 XXXXX

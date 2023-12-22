@@ -19,13 +19,42 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    return const AppWrapper();
+  }
+}
+
+class AppWrapper extends StatefulWidget {
+  const AppWrapper({super.key});
+
+  @override
+  State<StatefulWidget> createState() => StateAppWrapper();
+}
+
+class StateAppWrapper extends State<AppWrapper> {
+  bool? isDark;
+
+  @override
+  void initState() {
+    super.initState();
+    ArcheBus.bus.provide(this);
+  }
+
+  void switchTheme() {
+    setState(() {
+      isDark = !isDark!;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
     ConfigContainer config = ArcheBus.bus.of();
+    isDark ??= MediaQuery.platformBrightnessOf(context) == Brightness.dark;
     return MaterialApp(
       title: config.site,
-      themeMode: ThemeMode.system,
+      themeMode: isDark! ? ThemeMode.dark : ThemeMode.light,
       darkTheme: ThemeData.dark(useMaterial3: true),
       theme: ThemeData.light(useMaterial3: true),
-      home: const InitPage(),
+      home: const HomePage(),
     );
   }
 }

@@ -3,16 +3,16 @@ import 'package:blur/blur.dart';
 import 'package:flutter/material.dart';
 import 'package:onenavigation/impl/config.dart';
 import 'package:onenavigation/impl/system.dart';
-import 'package:onenavigation/impl/text.dart';
+import 'package:onenavigation/main.dart';
 
-class InitPage extends StatefulWidget {
-  const InitPage({super.key});
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
 
   @override
-  State<StatefulWidget> createState() => _InitPageState();
+  State<StatefulWidget> createState() => _HomePageState();
 }
 
-class _InitPageState extends State<InitPage> {
+class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
@@ -25,6 +25,10 @@ class _InitPageState extends State<InitPage> {
   Widget build(BuildContext context) {
     ConfigContainer config = ArcheBus.bus.of();
     return Scaffold(
+        floatingActionButton: FloatingActionButton(
+          onPressed: () => ArcheBus.bus.of<StateAppWrapper>().switchTheme(),
+          child: const Icon(Icons.color_lens),
+        ),
         body: Blur(
             colorOpacity: 0,
             overlay: ListView(
@@ -38,18 +42,27 @@ class _InitPageState extends State<InitPage> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
+                            Image.asset(
+                              "resource/logo.png",
+                              width: window.width / 8,
+                              height: window.width / 8,
+                            ),
                             Padding(
                                 padding: const EdgeInsets.all(4),
-                                child: Text(
-                                  config.home.title,
-                                  style: TextStyle(
-                                      fontSize: window.width /
-                                          config.home.title.length),
-                                ).shader()),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children:
-                                  config.links.map((e) => e.build()).toList(),
+                                child: config.home.title.render(
+                                    style: TextStyle(
+                                        fontSize: window.width /
+                                            config.home.title.length))),
+                            Padding(
+                                padding: const EdgeInsets.all(8),
+                                child: config.home.subtitle.render(
+                                    style: TextStyle(
+                                        fontSize: window.width /
+                                            config.home.subtitle.length /
+                                            5 *
+                                            2))),
+                            SizedBox(
+                              height: window.width / 8,
                             )
                           ],
                         ),
