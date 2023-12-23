@@ -1,12 +1,13 @@
 # 网站的标题，显示在标签栏
 site: One Navigation
 
+theme:
+  darkcolor: 0xFFE91E63
+  lightcolor: 0xFFE91E63
+
 # 主页标题
 home:
-  logo:
-    enable:
-    type:
-    text:
+  logo: false
   title:
     text: OneNavigation
     colors:
@@ -21,24 +22,9 @@ home:
 footer: Copyright © 2023 One Navigation
 # Copyright © 2023 XXXXX
 
-# 卡片图片
-image:
-  type: local
-# 类型 local / network
-# image:
-#   type: network
-#   text: https://...
-#
-# image:
-#   type: local
-#
-# 使用local请替换 resource/card.png
-
 # 导航地址
-links:
-  - name: Github
-    link: https://github.com/CCZU-OSSA/OneNavigation
-# links:
-#   - name: 名称
-#     type: FILL #TODO
-#     link: https://...
+navigation:
+  - group: OpenSource
+    links:
+      - name: Github
+        link: https://github.com/CCZU-OSSA/OneNavigation

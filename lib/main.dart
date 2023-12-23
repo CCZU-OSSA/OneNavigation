@@ -52,8 +52,18 @@ class StateAppWrapper extends State<AppWrapper> {
     return MaterialApp(
       title: config.site,
       themeMode: isDark! ? ThemeMode.dark : ThemeMode.light,
-      darkTheme: ThemeData.dark(useMaterial3: true),
-      theme: ThemeData.light(useMaterial3: true),
+      darkTheme: ThemeData.dark(useMaterial3: true).copyWith(
+          colorScheme: config.theme.darkcolor != null
+              ? ColorScheme.fromSeed(
+                  brightness: Brightness.dark,
+                  seedColor: config.theme.darkcolor!)
+              : null),
+      theme: ThemeData.light(useMaterial3: true).copyWith(
+          colorScheme: config.theme.lightcolor != null
+              ? ColorScheme.fromSeed(
+                  brightness: Brightness.light,
+                  seedColor: config.theme.lightcolor!)
+              : null),
       home: const HomePage(),
     );
   }
