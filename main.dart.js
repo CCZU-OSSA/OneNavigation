@@ -22361,7 +22361,7 @@ $1(a){var s=$.bM
 s=(s==null?$.bM=A.dY(self.window.flutterConfiguration):s).b
 if(s==null)s=null
 else{s=s.canvasKitBaseUrl
-if(s==null)s=null}return(s==null?"https://www.gstatic.com/flutter-canvaskit/3f3e560236539b7e2702f5ac790b2a4691b32d49/":s)+a},
+if(s==null)s=null}return(s==null?"https://www.gstatic.cn/flutter-canvaskit/3f3e560236539b7e2702f5ac790b2a4691b32d49/":s)+a},
 $S:84}
 A.a8I.prototype={
 $1(a){this.a.remove()
@@ -22714,7 +22714,7 @@ for(i=k.b,h=i.length,g=0;g<i.length;i.length===h||(0,A.G)(i),++g){f=i[g]
 e=$.q7
 e.toString
 d=f.a
-a6.push(p.lG(d,e.pM(d),j))}}if(!m)a6.push(p.lG("Roboto","https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Me5WZLCzYlKw.ttf","Roboto"))
+a6.push(p.lG(d,e.pM(d),j))}}if(!m)a6.push(p.lG("Roboto","https://fonts.loli.net/s/roboto/v20/KFOmCnqEu92Fr1Me5WZLCzYlKw.ttf","Roboto"))
 c=A.z(t.N,t.FK)
 b=A.a([],t.Co)
 a7=J
@@ -24499,7 +24499,7 @@ var $async$$0=A.Z(function(a,b){if(a===1){o=b
 s=p}while(true)switch(s){case 0:p=4
 k=n.b
 j=k.b
-m="https://fonts.gstatic.com/s/"+j
+m="https://fonts.loli.net/s/"+j
 s=7
 return A.a0(n.a.a.a.tU(k.a,m),$async$$0)
 case 7:n.c.push(j)
