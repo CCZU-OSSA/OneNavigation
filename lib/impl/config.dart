@@ -77,9 +77,13 @@ class InternalNavigationLink {
   String name;
   String link;
   String type;
-  InternalNavigationLink(this.name, this.link, this.type);
+  String tooltip;
+  InternalNavigationLink(this.name, this.link, this.type, this.tooltip);
   static InternalNavigationLink fromMap(Map map) {
-    return InternalNavigationLink(map["name"] ?? "Unknown", map["link"] ?? "",
-        (map["type"] ?? "elevated").toString().toLowerCase());
+    return InternalNavigationLink(
+        map["name"] ?? "Unknown",
+        map["link"] ?? "",
+        (map["type"] ?? "elevated").toString().toLowerCase(),
+        map["tooltip"] ?? "");
   }
 }

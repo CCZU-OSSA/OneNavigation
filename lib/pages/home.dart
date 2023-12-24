@@ -1,7 +1,6 @@
 import 'package:arche/arche.dart';
 import 'package:blur/blur.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:onenavigation/impl/config.dart';
 import 'package:onenavigation/impl/system.dart';
 import 'package:onenavigation/main.dart';
@@ -57,8 +56,7 @@ class _HomePageState extends State<HomePage> {
                                 Padding(
                                     padding: const EdgeInsets.all(4),
                                     child: config.home.title.render(
-                                        style: GoogleFonts.poppins(
-                                            fontWeight: FontWeight.w700,
+                                        style: TextStyle(
                                             fontSize: window.width /
                                                 config.home.title.length))),
                                 Padding(

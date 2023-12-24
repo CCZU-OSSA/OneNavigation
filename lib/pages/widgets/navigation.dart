@@ -26,18 +26,27 @@ extension BuildButton on InternalNavigationLink {
   Widget buildButton() {
     var child = Text(name);
     onPressed() => launchUrlString(link);
-    switch (type) {
-      case "filled":
-        return FilledButton(onPressed: onPressed, child: child);
-      case "filled_tonal":
-        return FilledButton.tonal(onPressed: onPressed, child: child);
-      case "outline":
-        return OutlinedButton(onPressed: onPressed, child: child);
-      case "text":
-        return TextButton(onPressed: onPressed, child: child);
-      default:
-        return ElevatedButton(onPressed: onPressed, child: child);
+    build() {
+      switch (type) {
+        case "filled":
+          return FilledButton(onPressed: onPressed, child: child);
+        case "filled_tonal":
+          return FilledButton.tonal(onPressed: onPressed, child: child);
+        case "outline":
+          return OutlinedButton(onPressed: onPressed, child: child);
+        case "text":
+          return TextButton(onPressed: onPressed, child: child);
+        default:
+          return ElevatedButton(onPressed: onPressed, child: child);
+      }
     }
+
+    return tooltip.isEmpty
+        ? build()
+        : Tooltip(
+            message: tooltip,
+            child: build(),
+          );
   }
 }
 

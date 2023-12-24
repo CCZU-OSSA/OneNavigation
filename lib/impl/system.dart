@@ -4,6 +4,7 @@ import 'package:universal_html/html.dart' as html;
 class WindowsManager {
   double get height => html.window.innerHeight?.toDouble() ?? 1080;
   double get width => html.window.innerWidth?.toDouble() ?? 1920;
+  html.Window get wrapper => html.window;
   void onResize(VoidCallback callback) => html.window.onResize.listen((event) {
         callback();
       });
