@@ -16,8 +16,9 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
+      - uses: actions/setup-python@v5
       - name: Build
-        run: flutter build web --base-href /OneNavigation/
+        run: python build.py
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:

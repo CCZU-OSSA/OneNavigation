@@ -76,8 +76,10 @@ class InternalNavigationGroup {
 class InternalNavigationLink {
   String name;
   String link;
-  InternalNavigationLink(this.name, this.link);
+  String type;
+  InternalNavigationLink(this.name, this.link, this.type);
   static InternalNavigationLink fromMap(Map map) {
-    return InternalNavigationLink(map["name"] ?? "Unknown", map["link"] ?? "");
+    return InternalNavigationLink(map["name"] ?? "Unknown", map["link"] ?? "",
+        (map["type"] ?? "elevated").toString().toLowerCase());
   }
 }

@@ -1,6 +1,12 @@
 # 网站的标题，显示在标签栏
 site: One Navigation
 
+build:
+  # 如果你的网站是 https://127.0.0.1/SomeString/ 而不是 https://127.0.0.1
+  # 请更改此项配置为/SomeString/ ，否则留空
+  base-href: /OneNavigation/
+
+# 主题
 theme:
   darkcolor: 0xFFE91E63
   lightcolor: 0xFFE91E63
@@ -28,3 +34,14 @@ navigation:
     links:
       - name: Github
         link: https://github.com/CCZU-OSSA/OneNavigation
+
+# navigation:
+#   - group: 组名
+#     links:
+#       - name: 名称
+#         link: 链接
+#         type: 按钮样式(elevated, filled, filled_tonal, outline, text, 默认为elevated)
+#
+#
+#
+#
