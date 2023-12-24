@@ -7,7 +7,7 @@ build:
   base-href: /OneNavigation/
   google-proxy:
     www: www.gstatic.cn
-    fonts: fonts.loli.net
+    fonts: gstatic.loli.net
 
 # 主题
 theme:
