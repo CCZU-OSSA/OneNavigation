@@ -6,7 +6,9 @@ build:
   # 请更改此项配置为/SomeString/ ，否则留空
   base-href: /OneNavigation/
   google-proxy:
+    # 代理 www.gstatic.com
     www: www.gstatic.cn
+    # 代理 fonts.gstatic.com
     fonts: gstatic.loli.net
 
 # 主题
@@ -37,14 +39,14 @@ navigation:
     links:
       - name: Github
         link: https://github.com/CCZU-OSSA/OneNavigation
-
+        tooltip: MIT LICENSE
 # navigation:
 #   - group: 组名
 #     links:
 #       - name: 名称
 #         link: 链接
 #         type: 按钮样式(elevated, filled, filled_tonal, outline, text, 默认为elevated)
-#
+#         tooltip: 悬浮提示
 #
 #
 #
