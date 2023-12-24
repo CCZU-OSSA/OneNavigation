@@ -5,6 +5,9 @@ build:
   # 如果你的网站是 https://127.0.0.1/SomeString/ 而不是 https://127.0.0.1
   # 请更改此项配置为/SomeString/ ，否则留空
   base-href: /OneNavigation/
+  google-proxy:
+    www: www.gstatic.cn
+    fonts: fonts.loli.net
 
 # 主题
 theme:
